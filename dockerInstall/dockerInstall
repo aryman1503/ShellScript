@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Docker install script
+
+# Update the system
+sudo apt-get -y update
+
+# Remove the old version of docker and dependenices
+sudo apt-get remove -y docker docker-engine docker.io
+
+# Install latest version of docker
+sudo apt install -y docker.io
+
+# Start system services
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Run docker command
+docker --version
+
+echo "\n\n\t\t Have a great container!!\t\n\n"
